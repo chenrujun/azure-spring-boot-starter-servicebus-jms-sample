@@ -7,9 +7,9 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QueueMessageReceiver {
+public class QueueMessageReceiver1 {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(QueueMessageReceiver.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(QueueMessageReceiver1.class);
 
     @JmsListener(destination = "rujche-queue", containerFactory = "jmsListenerContainerFactory")
     public void receiveMessage(User user) {
