@@ -1,0 +1,14 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+server:
+  port: 8080
+spring:
+  jms:
+    servicebus:
+      connection-string: <connection-string>
+      idle-timeout: 1800000
+      topic-client-id: <topic-client-id>
+  profiles:
+    active: develop
