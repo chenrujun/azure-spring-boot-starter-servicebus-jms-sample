@@ -1,4 +1,4 @@
-package chenrujun.azure.spring.boot.starter.servicebus.jms.sample.topic.subscription.one;
+package chenrujun.azure.spring.boot.starter.servicebus.jms.sample.topic;
 
 import chenrujun.azure.spring.boot.starter.servicebus.jms.sample.User;
 import org.slf4j.Logger;
