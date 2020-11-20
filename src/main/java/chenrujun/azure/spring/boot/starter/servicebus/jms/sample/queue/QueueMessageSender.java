@@ -1,5 +1,6 @@
-package chenrujun.azure.spring.boot.starter.servicebus.jms.sample;
+package chenrujun.azure.spring.boot.starter.servicebus.jms.sample.queue;
 
+import chenrujun.azure.spring.boot.starter.servicebus.jms.sample.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class QueueMessageSender {
-
-    private static final String DESTINATION_NAME = "rujche-queue";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(QueueMessageSender.class);
 
@@ -26,8 +25,8 @@ public class QueueMessageSender {
 
     @PostMapping("/messages")
     public String postMessage(@RequestParam String message) {
-        LOGGER.info("Sending message: {}", message);
-        jmsTemplate.convertAndSend(DESTINATION_NAME, new User(message));
-        return "Message sent. message = " + message;
+        LOGGER.info("Sending queue message: {}", message);
+        jmsTemplate.convertAndSend("rujche-queue", new User(message));
+        return "Queue message sent. message = " + message;
     }
 }
